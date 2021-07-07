@@ -17,7 +17,7 @@ func NewTransactionRepositoryDb(db *sql.DB) *TransactionRepositoryDb {
 
 func (t *TransactionRepositoryDb) SaveTransaction(transaction domain.Transaction, creditCard domain.CreditCard) error {
 	stmt, err := t.db.Prepare(`insert into transactions(id, credit_card_id, amount, status, description, store, created_at)
-														values($1, $2, $3, $4, $5, $6)`)
+														values($1, $2, $3, $4, $5, $6, $7)`)
 	if err != nil {
 		return err
 	}
