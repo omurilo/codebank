@@ -1,0 +1,6 @@
+[submodule "store-api"]
+	path = store-api
+	url = git@github.com:omurilo/store-api.git
+[submodule "store-frontend"]
+	path = store-frontend
+	url = git@github.com:omurilo/store-frontend.git
