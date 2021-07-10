@@ -38,6 +38,7 @@ func (u UseCaseTransaction) ProcessTransaction(transactionDto dto.Transaction) (
 	}
 	transactionDto.ID = t.ID
 	transactionDto.CreatedAt = t.CreatedAt
+	transactionDto.Status = t.Status
 	transactionJson, err := json.Marshal(transactionDto)
 	if err != nil {
 		return domain.Transaction{}, nil

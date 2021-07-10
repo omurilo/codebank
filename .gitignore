@@ -1,3 +1,7 @@
 */.idea
 */.pgdata
 */.env
+*/node_modules
+
+apache-kafka/es01
+apache-kafka/data

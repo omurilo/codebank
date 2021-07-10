@@ -90,12 +90,12 @@ func (t *TransactionRepositoryDb) CreateCreditCard(creditCard domain.CreditCard)
 
 func (t *TransactionRepositoryDb) GetCreditCard(creditCard domain.CreditCard) (domain.CreditCard, error) {
 	var c domain.CreditCard
-	stmt, err := t.db.Prepare(`select id, balance, balance_limit from credit_cards where number=$1`)
+	stmt, err := t.db.Prepare(`select id, balance, balance_limit from credit_cards where number=$1 and expiration_month=$2 and expiration_year=$3`)
 
 	if err != nil {
 		return c, err
 	}
-	if err = stmt.QueryRow(creditCard.Number).Scan(&c.ID, &c.Balance, &c.Limit); err != nil {
+	if err = stmt.QueryRow(creditCard.Number, creditCard.ExpirationMonth, creditCard.ExpirationYear).Scan(&c.ID, &c.Balance, &c.Limit); err != nil {
 		return c, errors.New("credit card does not exists")
 	}
 
