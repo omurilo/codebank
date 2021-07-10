@@ -1,0 +1,26 @@
+version: "3"
+
+services:
+  api:
+    container_name: nest-api
+    build: ./api
+    entrypoint: ./.docker/entrypoint.sh
+    ports:
+      - 3000:3000
+    volumes:
+      - $PWD/api:/usr/app
+    extra_hosts:
+      - "host.docker.internal:172.17.0.1"
+
+  front:
+    container_name: next-frontend
+    build: ./frontend
+    entrypoint: dockerize -wait tcp://api:3000 -timeout 90s ./.docker/entrypoint.sh
+    ports:
+      - 3001:3000
+    volumes:
+      - $PWD/frontend:/usr/app
+    extra_hosts:
+      - "host.docker.internal:172.17.0.1"
+    depends_on:
+      - api
