@@ -34,6 +34,6 @@ func renderTemplate(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	http.HandleFunc("/", renderTemplate)
-	fmt.Println("Servidor web rodando na porta 8080")
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	fmt.Println("Servidor web rodando na porta 8000")
+	log.Fatal(http.ListenAndServe(":8000", nil))
 }
