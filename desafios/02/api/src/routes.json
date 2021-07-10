@@ -1,0 +1,41 @@
+{
+  "routes": [
+    {
+      "title": "Do Masp ao Ibirapuera",
+      "startPosition": {
+        "lat": -23.561644731598527,
+        "lng": -46.65572087895403
+      },
+      "endPosition": { "lat": -23.583042595992847, "lng": -46.66434686250945 }
+    },
+    {
+      "title": "Do Futebol à Diversidade Sexual",
+      "startPosition": { "lat": -23.54405968644318, "lng": -46.66387479375767 },
+      "endPosition": { "lat": -23.54331217050486, "lng": -46.639713457465696 }
+    },
+    {
+      "title": "Da 25 à Santa Efigênia",
+      "startPosition": {
+        "lat": -23.543098336935465,
+        "lng": -46.632440266916824
+      },
+      "endPosition": { "lat": -23.538927905945243, "lng": -46.63866299137223 }
+    },
+    {
+      "title": "Do Mercado municipal à Catedral",
+      "startPosition": {
+        "lat": -23.541445917833858,
+        "lng": -46.62928598934805
+      },
+      "endPosition": { "lat": -23.551065066188908, "lng": -46.63419979590076 }
+    },
+    {
+      "title": "Do Frei caneca ao Masp",
+      "startPosition": {
+        "lat": -23.553327136071136,
+        "lng": -46.65267485198324
+      },
+      "endPosition": { "lat": -23.560939083936844, "lng": -46.6558076728071 }
+    }
+  ]
+}
