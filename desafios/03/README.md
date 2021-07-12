@@ -37,6 +37,17 @@ kubectl apply -f configmap.yml
 kubectl apply -f deployment.yml
 kubectl apply -f service.yml
 ```
+
+- Para testar as aplicações é necessário utilizar a ferramenta `port-forward` do kubectl, para isso:
+
+```bash
+# API
+kubectl port-forward svc/api-challenge-service 3000:80
+
+# FRONTEND
+kubectl port-forward svc/frontend-challenge-service 8000:80
+```
+
 -> PS: Deve ter instalado e configurado o `docker`, o `kind`, o `kubectl` e o repositório `helm`, também ter instalado com o helm o `bitnami/postgresql` e possuir um cluster configurado com kind.
 
 -> PS2: Dentro das pastas `/api/.docker` e `/frontend/.docker` existem os arquivos `entrypoint.prod.sh` que devem possuir permissão de execução no bash.
