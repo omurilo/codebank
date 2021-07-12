@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS credit_cards;
 CREATE TABLE credit_cards (
   id uuid NOT NULL,
   name VARCHAR NOT NULL,
@@ -11,6 +12,7 @@ CREATE TABLE credit_cards (
   PRIMARY KEY (id)
 );
 
+DROP TABLE IF EXISTS transactions;
 CREATE TABLE transactions (
   id uuid NOT NULL,
   amount float NOT NULL,
@@ -19,5 +21,5 @@ CREATE TABLE transactions (
   store VARCHAR NOT NULL,
   credit_card_id uuid NOT NULL references credit_cards(id),
   created_at timestamp not null,
-  PRIMARY KEY (id)
+  PRIMARY KEY (id),
 );
