@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: frontend-challenge-conf
+data:
+  env: |
+    NEXT_PUBLIC_API_URL=http://api-challenge-service

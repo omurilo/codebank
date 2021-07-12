@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-challenge
+spec:
+  selector:
+    matchLabels:
+      app: api-challenge
+  template:
+    metadata:
+      labels:
+        app: api-challenge
+    spec:
+      containers:
+      - name: api-challenge
+        image: omurilo/imersao3-api-challenge:latest
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 3000

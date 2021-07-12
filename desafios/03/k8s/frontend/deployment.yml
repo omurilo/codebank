@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-challenge
+spec:
+  selector:
+    matchLabels:
+      app: frontend-challenge
+  template:
+    metadata:
+      labels:
+        app: frontend-challenge
+    spec:
+      containers:
+      - name: frontend-challenge
+        image: omurilo/imersao3-frontend-challenge:latest
+        volumeMounts:
+          - name: frontend-challenge-volume
+            mountPath: /usr/app/.env
+            subPath: .env
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 3000
+
+      volumes:
+        - name: frontend-challenge-volume
+          configMap:
+            name: frontend-challenge-conf
+            items:
+              - key: env
+                path: .env
