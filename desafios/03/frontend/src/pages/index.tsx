@@ -24,7 +24,6 @@ type HomePageProps = {
 };
 
 export default function Home({ routes }: HomePageProps) {
-  console.log({ routes });
   return (
     <div>
       <Head>
@@ -153,6 +152,6 @@ export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
     };
   } catch (error) {
     console.log(error);
-    return { notFound: true };
+    return { props: { routes: [] }, revalidate: 1 * 60 };
   }
 };
